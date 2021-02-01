@@ -1,0 +1,92 @@
+// gulpfile.js
+const gulp = require("gulp");
+    sass = require("gulp-sass")
+    postcss = require('gulp-postcss')
+    autoprefixer = require('autoprefixer')
+    cssnano = require('cssnano')
+    sourcemaps = require('gulp-sourcemaps')
+    browserSync = require('browser-sync')
+    browserify = require("browserify");
+    babelify = require("babelify");
+    source = require("vinyl-source-stream");
+    useref = require('gulp-useref')
+
+var paths = {
+  styles: {
+    src: 'src/**/*.scss',
+    dest: 'dist/css'
+  },
+  scripts: {
+    src: 'src/js/*.js',
+    dest: 'dist/js'
+  }
+}
+
+// Define tasks after requiring dependencies
+function style() {
+    // Where should gulp look for the sass files?
+    // My .sass files are stored in the styles folder
+    // (If you want to use scss files, simply look for *.scss files instead)
+    return (
+        gulp
+            .src(paths.styles.src)
+            .pipe(sourcemaps.init())
+            // Use sass with the files found, and log any errors
+            .pipe(sass())
+            .on("error", sass.logError)
+
+            .pipe(postcss([autoprefixer(), cssnano()]))
+            // What is the destination for the compiled file?
+            .pipe(sourcemaps.write())
+            .pipe(gulp.dest(paths.styles.dest))
+            .pipe(browserSync.stream())
+    );
+}
+
+function javascriptBuild() {
+  	
+    // Start by calling browserify with our entry pointing to our main javascript file
+    return (
+      browserify({
+          entries: [`${paths.scripts.src}`],
+          // Pass babelify as a transform and set its preset to @babel/preset-env
+          transform: [babelify.configure({ presets: ["@babel/preset-env"] })]
+      })
+          // Bundle it all up!
+          .bundle()
+          // Source the bundle
+          .pipe(source("bundle.js"))
+          // Then write the resulting files to a folder
+          .pipe(gulp.dest(paths.scripts.dest))
+  )
+}
+
+
+gulp.task('useref', function(){
+  return gulp.src('./*.html')
+    .pipe(useref())
+    .pipe(gulp.dest('dist'))
+});
+
+// Reload browser
+function reload() {
+  browserSync.reload();
+}
+
+// Define watch task for automation
+function watch() {
+  browserSync.init({
+    server: {
+      baseDir: './'
+    }
+  })
+  gulp.watch(paths.styles.src, style)
+  //gulp.watch(paths.scripts.src, javascriptBuild)
+  gulp.watch('./**/*.html', reload)
+  gulp.watch('./src/js/*.js', reload)
+}
+
+// Expose the task by exporting it
+// This allows you to run it from the commandline using
+// $ gulp watch
+exports.watch = watch;
