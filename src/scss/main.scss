@@ -1,7 +1,6 @@
 $theme-colors: (
-  "primary": #ff69b4,
+  "primary": #cedf0e,
 );
 
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "./styles.scss";
-@import "./base";
