@@ -3,4 +3,5 @@ $theme-colors: (
 );
 
 @import "node_modules/bootstrap/scss/bootstrap";
+@import "./base.scss";
 @import "./styles.scss";
