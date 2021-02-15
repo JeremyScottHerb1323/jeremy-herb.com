@@ -24,7 +24,6 @@
 #bio {
   position: relative;
   z-index: 1;
-  padding: 50px 0 25px 0;
   &:after {
     background: inherit;
     bottom: 0;
@@ -79,6 +78,17 @@
     padding: 100px 0 30px 0;
   }
 }
+.parallax::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(-1px) scale(1.5);
+  background-size: 100%;
+  z-index: -1;
+}
 
 #projects {
   background-color: var(--light-bg-color);
@@ -107,10 +117,56 @@
     -moz-box-shadow: 4px 7px 10px 0px rgba(50, 50, 50, 0.32);
     box-shadow: 4px 7px 10px 0px rgba(50, 50, 50, 0.32);
     color: var(--light-text-color);
+    a {
+      background-color: var(--ht-1-color);
+      width: 50%;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #fff;
+      font-family: "Playfair Display", serif;
+      font-size: 1em;
+      font-weight: bold;
+      &:hover {
+        border-bottom: 0;
+      }
+    }
   }
 }
 
 #contact-section {
   background-color: var(--ht-3-color);
   color: var(--light-text-color);
+  padding: 102px 0 60px 0;
+  p {
+    margin-bottom: 5px;
+  }
+  ul {
+    li {
+      list-style-type: none;
+      display: inline-block;
+      margin-right: 5px;
+      a {
+      }
+    }
+  }
+  form {
+    input {
+      border: 1px solid #0bb9b1;
+    }
+    button {
+      background-color: var(--ht-1-color);
+      width: 50%;
+      padding: 10px;
+      border: 1px solid #0bb9b1;
+      border-radius: 5px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #fff;
+      font-family: "Playfair Display", serif;
+      font-size: 1em;
+      font-weight: bold;
+    }
+  }
 }

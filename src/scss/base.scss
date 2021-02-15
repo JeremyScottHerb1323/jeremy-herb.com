@@ -31,7 +31,7 @@ section {
 }
 
 section {
-  padding: 50px 0;
+  padding: 66px 0;
 }
 
 /* Corrects inline-block not defined in IE6/7/8 and FF3 */
@@ -130,14 +130,20 @@ hr {
 */
 
 h1,
+.h1,
 h2,
+.h2,
 h3,
+.h3,
 h4,
+.h4,
 h5,
-h6 {
+.h5 h6,
+.h6 {
   font-family: "Playfair Display", serif;
   font-size: 1em;
   font-weight: bold;
+  display: block;
 }
 
 h1 {
