@@ -1,0 +1,39 @@
+#bio {
+	.bio-text,
+	.bio-image {
+		@extend .col-12;
+		@extend .col-sm-12;
+		@extend .col-md-6;
+	}
+}
+
+#projects {
+	.project-image,
+	.project-description {
+		@extend .col-12;
+		@extend .col-sm-12;
+		@extend .col-md-6;
+	}
+	.project-description {
+		.btn {
+			@extend .col-12;
+			@extend .col-md-5;
+		}
+	}
+}
+
+#contact-section {
+	.contact-info,
+	.contact-form-container {
+		@extend .col-12;
+		@extend .col-sm-12;
+		@extend .col-md-6;
+	}
+
+	.contact-form-container {
+		.btn {
+			@extend .col-12;
+			@extend .col-md-5;
+		}
+	}
+}

@@ -1,7 +1,4 @@
-$theme-colors: (
-  "primary": #cedf0e,
-);
-
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "./base.scss";
 @import "./styles.scss";
+@import "./responsive.scss";

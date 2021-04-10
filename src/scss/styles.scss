@@ -1,172 +1,147 @@
 /* Custom Styles */
 
-.ht-1_bg {
-  background-color: var(--ht-1-color);
-  p {
-    color: var(--light-text-color);
-  }
-}
-
-.ht-2_bg {
-  background-color: var(--ht-bg-color);
-  p {
-    color: var(--dark-text-color);
-  }
-}
-
-.ht-3_bg {
-  background-color: var(--ht-3-color);
-  p {
-    color: var(--dark-text-color);
-  }
-}
-
 #bio {
-  position: relative;
-  z-index: 1;
-  &:after {
-    background: inherit;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 50%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    transform: skewY(-1.5deg);
-    transform-origin: 100%;
-    z-index: -1;
-    -webkit-box-shadow: 0px 23px 19px 9px rgba(43, 55, 84, 0.23);
-    box-shadow: 0px 23px 19px 9px rgba(43, 55, 84, 0.23);
-  }
-  h1 {
-    color: var(--light-text-color);
-  }
-  h2 {
-    color: var(--light-text-color);
-  }
-  img {
-    margin: 0 auto;
-    display: block;
-    border: 3px solid #fff;
-    border-radius: 2px;
-    margin-top: 11%;
-  }
+	background-color: var(--ht-1-color);
+	position: relative;
+	z-index: 1;
+	&:after {
+		display: block;
+		background: inherit;
+		content: "";
+		height: 50%;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		transform: skewY(-1.5deg);
+		transform-origin: 100%;
+		-webkit-box-shadow: 0px 23px 19px 9px rgba(43, 55, 84, 0.23);
+		box-shadow: 0px 23px 19px 9px rgba(43, 55, 84, 0.23);
+	}
+	p {
+		color: var(--light-text-color);
+	}
+	h1 {
+		color: var(--light-text-color);
+	}
+	h2 {
+		color: var(--light-text-color);
+	}
+	img {
+		display: block;
+		margin: 11% auto 0 auto;
+		border: 3px solid #fff;
+		border-radius: 2px;
+	}
 }
 
 #tech-stack {
-  background-image: url(/src/img/tech-stack-bg.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  object-fit: cover;
-  padding: 0;
-  -webkit-box-shadow: inset 0px -13px 19px 9px rgba(43, 55, 84, 0.23);
-  box-shadow: inset 0px -13px 19px 9px rgba(43, 55, 84, 0.23);
-  ul {
-    li {
-      list-style-type: none;
-      margin-bottom: 5px;
-      font-size: 1.2em;
-      svg {
-        margin-right: 5px;
-      }
-    }
-  }
-  .blur {
-    backdrop-filter: blur(5px) saturate(120%);
-    padding: 100px 0 30px 0;
-  }
-}
-.parallax::after {
-  content: " ";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transform: translateZ(-1px) scale(1.5);
-  background-size: 100%;
-  z-index: -1;
+	background-image: url(/src/img/tech-stack-bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	object-fit: cover;
+	padding: 0;
+	min-height: 530px;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	-webkit-box-shadow: inset 0px -13px 19px 9px rgba(43, 55, 84, 0.23);
+	box-shadow: inset 0px -13px 19px 9px rgba(43, 55, 84, 0.23);
+	ul {
+		li {
+			list-style-type: none;
+			margin-bottom: 5px;
+			font-size: 1.2em;
+			svg {
+				margin-right: 5px;
+			}
+		}
+	}
+	.blur {
+		backdrop-filter: blur(5px) saturate(120%);
+		padding: 100px 0 30px 0;
+	}
 }
 
 #projects {
-  background-color: var(--light-bg-color);
-  position: relative;
-  z-index: 1;
-  &:after {
-    background: inherit;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 50%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    transform: skewY(-1.5deg);
-    transform-origin: 100%;
-    z-index: -1;
-  }
+	background-color: var(--light-bg-color);
+	position: relative;
+	z-index: 1;
+	&:after {
+		display: block;
+		background: inherit;
+		content: "";
+		height: 50%;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		transform: skewY(-1.5deg);
+		transform-origin: 100%;
+	}
 
-  .project-description {
-    @extend .card;
-    background-color: var(--ht-2-color);
-    border: 0;
-    padding: 25px;
-    -webkit-box-shadow: 4px 7px 10px 0px rgba(50, 50, 50, 0.32);
-    -moz-box-shadow: 4px 7px 10px 0px rgba(50, 50, 50, 0.32);
-    box-shadow: 4px 7px 10px 0px rgba(50, 50, 50, 0.32);
-    color: var(--light-text-color);
-    a {
-      background-color: var(--ht-1-color);
-      width: 50%;
-      padding: 10px;
-      border-radius: 5px;
-      text-align: center;
-      text-transform: uppercase;
-      color: #fff;
-      font-family: "Playfair Display", serif;
-      font-size: 1em;
-      font-weight: bold;
-      &:hover {
-        border-bottom: 0;
-      }
-    }
-  }
+	.project {
+		min-height: 364px;
+		.project-image-container {
+			img {
+				position: absolute;
+			}
+		}
+		.project-description {
+			//@extend .card;
+			margin-top: 65px;
+			background-color: var(--ht-2-color);
+			color: var(--light-text-color);
+			padding: 25px;
+			border: 0;
+			-webkit-box-shadow: 4px 7px 10px 0px rgba(50, 50, 50, 0.32);
+			-moz-box-shadow: 4px 7px 10px 0px rgba(50, 50, 50, 0.32);
+			box-shadow: 4px 7px 10px 0px rgba(50, 50, 50, 0.32);
+			a {
+				border: 0;
+				&:hover {
+					border-bottom: 0;
+				}
+			}
+		}
+	}
 }
 
 #contact-section {
-  background-color: var(--ht-3-color);
-  color: var(--light-text-color);
-  padding: 102px 0 60px 0;
-  p {
-    margin-bottom: 5px;
-  }
-  ul {
-    li {
-      list-style-type: none;
-      display: inline-block;
-      margin-right: 5px;
-      a {
-      }
-    }
-  }
-  form {
-    input {
-      border: 1px solid #0bb9b1;
-    }
-    button {
-      background-color: var(--ht-1-color);
-      width: 50%;
-      padding: 10px;
-      border: 1px solid #0bb9b1;
-      border-radius: 5px;
-      text-align: center;
-      text-transform: uppercase;
-      color: #fff;
-      font-family: "Playfair Display", serif;
-      font-size: 1em;
-      font-weight: bold;
-    }
-  }
+	background-color: var(--ht-3-color);
+	color: var(--light-text-color);
+	padding: 102px 0 60px 0;
+	p {
+		margin-bottom: 5px;
+	}
+	ul {
+		li {
+			list-style-type: none;
+			display: inline-block;
+			margin-right: 5px;
+			a {
+				&:hover {
+					border-bottom: 0;
+					.icon {
+						fill: var(--ht-1-color);
+					}
+				}
+			}
+		}
+	}
+	form {
+		input {
+			border: 1px solid #0bb9b1;
+		}
+		button {
+			border: 1px solid #0bb9b1;
+			&:hover {
+				background-color: var(--ht-2-color);
+			}
+		}
+	}
 }
